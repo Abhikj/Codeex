@@ -1,0 +1,105 @@
+:root {
+  --bg: #0f1115;
+  --card: #171b22;
+  --text: #f4f4f5;
+  --muted: #b7bec7;
+  --accent: #f59e0b;
+  --danger: #ef4444;
+  --ok: #22c55e;
+  --border: #2a3240;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+
+.subtitle {
+  color: var(--muted);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+  padding: 1rem 1.5rem 2rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+}
+
+.grid-form {
+  display: grid;
+  gap: 0.7rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.92rem;
+}
+
+input,
+select,
+button {
+  padding: 0.55rem 0.65rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #10141b;
+  color: var(--text);
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  color: #151515;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  padding: 0.45rem 0.3rem;
+}
+
+.status-low {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.status-good {
+  color: var(--ok);
+  font-weight: 700;
+}
