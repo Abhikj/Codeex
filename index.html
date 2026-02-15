@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Craft Brewery Inventory & Batch Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Craft Brewery Inventory & Batch Tracker</h1>
+      <p class="subtitle">A vertical SaaS prototype for small independent breweries.</p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Add Inventory Ingredient</h2>
+        <form id="inventory-form" class="grid-form">
+          <label>
+            Ingredient Name
+            <input type="text" id="ingredient-name" required placeholder="e.g., Citra Hops" />
+          </label>
+          <label>
+            Category
+            <select id="ingredient-category" required>
+              <option value="Hops">Hops</option>
+              <option value="Malt">Malt</option>
+              <option value="Yeast">Yeast</option>
+              <option value="Adjunct">Adjunct</option>
+            </select>
+          </label>
+          <label>
+            Quantity
+            <input type="number" id="ingredient-quantity" min="0" step="0.01" required />
+          </label>
+          <label>
+            Unit
+            <select id="ingredient-unit" required>
+              <option value="kg">kg</option>
+              <option value="lb">lb</option>
+              <option value="g">g</option>
+              <option value="packets">packets</option>
+            </select>
+          </label>
+          <label>
+            Reorder Threshold
+            <input type="number" id="ingredient-threshold" min="0" step="0.01" required />
+          </label>
+          <button type="submit">Add Ingredient</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Create Brewing Batch</h2>
+        <form id="batch-form" class="grid-form">
+          <label>
+            Batch Name
+            <input type="text" id="batch-name" required placeholder="e.g., Summer IPA #24" />
+          </label>
+          <label>
+            Target Volume (L)
+            <input type="number" id="batch-volume" min="1" required />
+          </label>
+          <label>
+            Brew Date
+            <input type="date" id="batch-date" required />
+          </label>
+          <label>
+            Ingredient Used
+            <select id="batch-ingredient" required></select>
+          </label>
+          <label>
+            Amount Used
+            <input type="number" id="batch-amount" min="0.01" step="0.01" required />
+          </label>
+          <button type="submit">Create Batch</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Inventory Snapshot</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Stock</th>
+              <th>Threshold</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="inventory-table-body"></tbody>
+        </table>
+      </section>
+
+      <section class="card">
+        <h2>Batch Log</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Batch</th>
+              <th>Volume</th>
+              <th>Brew Date</th>
+              <th>Ingredient</th>
+              <th>Amount Used</th>
+            </tr>
+          </thead>
+          <tbody id="batch-table-body"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
